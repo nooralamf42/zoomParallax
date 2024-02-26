@@ -11,8 +11,7 @@ function App() {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
-    requestAnimationFrame(raf);
+ requestAnimationFrame(raf);
   }, []);
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -69,13 +68,12 @@ function App() {
   ];
 
   const paymentHandler = async () => {
-    const {data: { id, amount }} = await axios.post('https://api.razorpay.com/v1/orders', {
+    const {data: { id, amount }} = await axios.post('https://divine-perfumers-backend.vercel.app/createorder', {
       "amount" : 50000,
       "currency" : "INR",
       "receipt" : "testfjkdjsdlfk"
     },{
       headers: {
-        'Authorization': 'Basicrzp_test_xOKEYArzgTHRZ0:SnrZSdP6XgzhKZfTaVyOeIhV',
         "Content-Type": "application/json",
       },
     })
@@ -118,6 +116,8 @@ function App() {
 
     razor.open()
   };
+   
+
 
   return (
     <div className="h-screen flex justify-center items-center">
