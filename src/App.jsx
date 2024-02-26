@@ -69,7 +69,7 @@ function App() {
 
   const paymentHandler = async () => {
     const {data: { id, amount }} = await axios.post('https://divine-perfumers-backend.vercel.app/createorder', {
-      "amount" : 50000,
+      "amount" : 10000,
       "currency" : "INR",
       "receipt" : "testfjkdjsdlfk"
     },{
@@ -79,7 +79,7 @@ function App() {
     })
 
 
-    console.log(id)
+    console.log(amount)
     let options = {
       key: "rzp_test_xOKEYArzgTHRZ0", // Enter the Key ID generated from the Dashboard
       amount: amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
